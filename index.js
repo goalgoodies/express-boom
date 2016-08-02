@@ -20,11 +20,11 @@ module.exports = function () {
 
           var json = boomed.output.payload;
 
-          if (boomed.details) {
-            json.details = boomed.details;
+          if (boomed.data) {
+            json.details = boomed.data;
           }
 
-          return res.status(boomed.output.statusCode).send(boomed.output.payload);
+          return res.status(boomed.output.statusCode).json(json);
         };
       }
     });
